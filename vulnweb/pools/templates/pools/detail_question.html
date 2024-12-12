@@ -1,0 +1,18 @@
+{% extends 'pools/base.html' %}
+
+{% block conetent123 %}
+    {% if qs %}
+    <form action="">
+        <ul>
+            {% for item in qs.choice_set.all %}
+                <li><input type="radio" value="{{ item.id }}" name="choice"> {{ item.choice_text }}</li>
+            {% endfor %}
+            <p><input type="submit" value="submit"></p>
+            </ul>
+    </form>
+        
+    {% else %}
+        <h3 style="color: red;">Invalid</h3>
+    {% endif %}
+
+{% endblock %}

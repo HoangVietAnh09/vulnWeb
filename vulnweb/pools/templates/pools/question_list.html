@@ -1,0 +1,13 @@
+{% extends 'pools/base.html' %}
+
+{% block conetent123 %}
+    {% if list_quest %}
+        {% for item in list_quest %}
+            {{ item.question_text }}
+            <br>
+        {% endfor %}
+    {% else %}
+        <h3 style="color: red;">No information</h3>
+    {% endif %}
+
+{% endblock %}

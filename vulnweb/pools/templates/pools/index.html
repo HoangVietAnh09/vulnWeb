@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% extends 'pools/base.html' %}
+
+    {% block content %}
+    <h1>This is template</h1>
+    <label for="">
+        <input type="text" name="name" id="">
+    </label>
+    <p>Hello my name is <b>{{ name }}</b></p>
+    <h2>Somthing here</h2>
+    <ul>
+        {% for item in st %}
+            {% if item != 'Phone' %}
+                <li>{{item}}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</body>
+</html>
