@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    
+
+    <div class="ssti1">
+        {% if user_authenticated %}
+        <h1>Welcome, {{ username }}!</h1>
+        {% else %}
+            <p>Please log in to access the content.</p>
+        {% endif %}
+
+        <ul>
+            {% for item in items %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="ssti2">
+        <form method="" action="">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+    
+            <button type="submit">Login</button>
+        </form> 
+
+        <h2>
+            <p>Hello {{username}}</p>
+            <p></p>
+        </h2>
+    </div>
+    
+</body>
+</html>

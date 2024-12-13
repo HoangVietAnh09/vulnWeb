@@ -3,8 +3,9 @@
 {% block conetent123 %}
     {% if list_quest %}
         {% for item in list_quest %}
-            {{ item.question_text }}
-            <br>
+        <a href="{% url 'pools:details' item.id %}">
+            <p>{{ item.question_text }}</p>
+        </a>
         {% endfor %}
     {% else %}
         <h3 style="color: red;">No information</h3>

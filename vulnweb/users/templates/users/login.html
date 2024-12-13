@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .login form{
+            display: flex;
+            flex-direction: column;
+            width: 300px; 
+            margin: 0 auto;
+        }
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+        #submit_button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4CAF50; 
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="login form">
+        <form action="{% url 'users:save' %}" method="post">
+            {% csrf_token %}
+            <label for="">Username: </label>{{f.username}}
+            <label for="">Password</label>{{f.password}}
+            <input type="submit" value="submit" id="submit_button">
+            <!-- 
+            <label for="">Username</label>
+            <input type="text" name="username" placeholder="username">
+            <label for="">Password</label>
+            <input type="password" name="password" placeholder="password">
+            <button type="submit">Submit</button> -->
+        </form>
+    </div>
+</body>
+</html>

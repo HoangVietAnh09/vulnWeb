@@ -21,3 +21,15 @@ def detail_view(request, question_id):
     q = Question.objects.get(pk=question_id)
     return render(request, 'pools/detail_question.html', {"qs": q})
 
+
+def vote(request, question_id):
+    q = Question.objects.get(pk=question_id)
+    try:
+        data = request.POST['choice']
+        c = q.choice_set.get(pk=data)
+    except:
+        HttpResponse("Error: Not find choice")
+    c.vote += 1
+    c.save()
+    return HttpResponse(c.vote)
+
