@@ -33,3 +33,13 @@ def vote(request, question_id):
     c.save()
     return HttpResponse(c.vote)
 
+
+def test_type(request, id):
+    return HttpResponse('Test %s' % id)
+
+
+def test(request):
+    latest_question_list = Question.objects.order_by("-time_pub")[:]
+    output = ','.join([q.question_text for q in latest_question_list])
+    return HttpResponse(output)
+
